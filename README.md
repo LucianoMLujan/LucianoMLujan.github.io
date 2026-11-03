@@ -50,10 +50,13 @@ El servidor de desarrollo estará disponible en `http://localhost:4321`.
 │   │   ├── Navbar.astro
 │   │   └── three/
 │   │       ├── CodeBackground.astro
-│   │       └── HeroScene.astro
+│   │       ├── HeroScene.astro
+│   │       └── SectionDecor.astro
 │   ├── lib/
+│   │   ├── motion.ts
 │   │   ├── skills.ts
 │   │   └── three/
+│   │       ├── decor.ts
 │   │       ├── fallback2d.ts
 │   │       └── glyphs.ts
 │   ├── pages/
@@ -68,8 +71,8 @@ El servidor de desarrollo estará disponible en `http://localhost:4321`.
 | Sección | Descripción |
 |---------|-------------|
 | **Hero** | Presentación principal con nombre, título y foto de perfil |
-| **Experiencia** | Timeline de experiencia laboral |
-| **Educación** | Formación académica y certificaciones |
+| **Experiencia** | Timeline animada al scroll, con nodos, tarjetas interactivas y espiral 3D |
+| **Educación** | Formación académica y certificaciones con revelado progresivo y núcleo 3D |
 | **Contacto** | Información de contacto y enlaces a redes sociales |
 
 ## Despliegue

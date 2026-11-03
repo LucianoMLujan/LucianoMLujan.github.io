@@ -25,6 +25,7 @@ const { title, description } = Astro.props;
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<title>{title}</title>
+		<script is:inline>document.documentElement.classList.add("js");</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -41,5 +42,10 @@ const { title, description } = Astro.props;
 			</main>
 			<Footer />
 		</div>
+		<script>
+			import { initSectionMotion } from "../lib/motion";
+
+			initSectionMotion();
+		</script>
 	</body>
 </html>

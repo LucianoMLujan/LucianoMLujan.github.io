@@ -1,0 +1,39 @@
+---
+import type { DecorVariant } from "../../lib/three/decor";
+
+interface Props {
+	variant: DecorVariant;
+	class?: string;
+}
+
+const { variant, class: className } = Astro.props;
+---
+
+<div
+	class:list={["pointer-events-none absolute select-none", className]}
+	style="mask-image: radial-gradient(circle at 50% 45%, black 28%, transparent 72%); -webkit-mask-image: radial-gradient(circle at 50% 45%, black 28%, transparent 72%);"
+	aria-hidden="true"
+>
+	<canvas
+		data-section-decor
+		data-variant={variant}
+		class="h-full w-full opacity-0 transition-opacity duration-1000"
+	></canvas>
+</div>
+
+<script>
+	import {
+		initSectionDecor,
+		type DecorVariant,
+	} from "../../lib/three/decor";
+
+	const canvases =
+		document.querySelectorAll<HTMLCanvasElement>("[data-section-decor]");
+
+	for (const canvas of canvases) {
+		const variant = canvas.dataset.variant as DecorVariant | undefined;
+		if (variant === "trajectory" || variant === "knowledge") {
+			initSectionDecor(canvas, variant);
+		}
+	}
+</script>
