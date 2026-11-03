@@ -1,4 +1,6 @@
 ---
+import HeroScene from "./three/HeroScene.astro";
+
 const socials = [
 	{
 		label: "GitHub",
@@ -19,6 +21,8 @@ const socials = [
 ---
 
 <section id="inicio" class="relative overflow-hidden">
+	<HeroScene />
+
 	<div
 		class="pointer-events-none absolute inset-0"
 		aria-hidden="true"

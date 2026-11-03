@@ -11,8 +11,11 @@ Desarrollador Full Stack | Portfolio personal construido con Astro
 - **Framework:** [Astro](https://astro.build/)
 - **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
 - **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Animaciones 3D:** [Three.js](https://threejs.org/)
 
 ## Inicio rápido
+
+> Requiere **Node.js ≥ 22.12** (el proyecto incluye `.nvmrc` con Node 24). Con nvm: `nvm use`.
 
 ```bash
 # Instalar dependencias
@@ -30,6 +33,8 @@ pnpm preview
 
 El servidor de desarrollo estará disponible en `http://localhost:4321`.
 
+> Si el navegador no puede crear un contexto WebGL (por ejemplo, con aceleración por software), las animaciones usan automáticamente un respaldo con Canvas 2D.
+
 ## Estructura del proyecto
 
 ```text
@@ -43,7 +48,14 @@ El servidor de desarrollo estará disponible en `http://localhost:4321`.
 │   │   ├── Experience.astro
 │   │   ├── Hero.astro
 │   │   ├── Navbar.astro
-│   │   └── Skills.astro
+│   │   └── three/
+│   │       ├── CodeBackground.astro
+│   │       └── HeroScene.astro
+│   ├── lib/
+│   │   ├── skills.ts
+│   │   └── three/
+│   │       ├── fallback2d.ts
+│   │       └── glyphs.ts
 │   ├── pages/
 │   │   └── index.astro
 │   └── styles/
@@ -57,7 +69,6 @@ El servidor de desarrollo estará disponible en `http://localhost:4321`.
 |---------|-------------|
 | **Hero** | Presentación principal con nombre, título y foto de perfil |
 | **Experiencia** | Timeline de experiencia laboral |
-| **Habilidades** | Grid de tecnologías con iconos e interacciones |
 | **Educación** | Formación académica y certificaciones |
 | **Contacto** | Información de contacto y enlaces a redes sociales |
 
